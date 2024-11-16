@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://clohdh5gjw0hy"]
+
+[ext_resource type="Script" path="res://ship.gd" id="1_grx6o"]
+[ext_resource type="Texture2D" uid="uid://dc8jc3lvk67o0" path="res://icon.svg" id="1_x7sf1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xserh"]
+size = Vector2(128, 128)
+
+[node name="Ship" type="RigidBody2D"]
+script = ExtResource("1_grx6o")
+
+[node name="ShipCore" type="Sprite2D" parent="."]
+texture = ExtResource("1_x7sf1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xserh")
+
+[node name="ForwardThruster" type="Node2D" parent="."]
+position = Vector2(0, 64)
